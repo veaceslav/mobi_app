@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         listAdapter = new CustomListAdapter(this,R.layout.listitem_layout, new ArrayList<Product>());
-        spinnerAdapter = new ArrayAdapter(this,android.R.layout.simple_spinner_item, new ArrayList<String>());
+        spinnerAdapter = new ArrayAdapter(this,android.R.layout.simple_dropdown_item_1line, new ArrayList<String>());
 
         lw = (ListView)findViewById(R.id.list);
         lw.setAdapter(listAdapter);
