@@ -7,7 +7,7 @@ package interview.mobiquinty.com.productcatalog;
  */
 public class Constants {
 
-    public static final String FETCH_URL = "http://mobcategories.s3-website-eu-west-1.amazonaws.com/";
+    public static final String FETCH_URL = "http://mobcategories.s3-website-eu-west-1.amazonaws.com";
 
     // JSON Parsing constants
     public static final String PRODUCT_ARRAY = "products";

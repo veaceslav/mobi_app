@@ -25,7 +25,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     private final String TAG = "MainActivity";
-    ArrayAdapter listAdapter;
+    CustomListAdapter listAdapter;
     ArrayAdapter spinnerAdapter;
 
     ListView lw;
@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        listAdapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1, new ArrayList<String>());
+        listAdapter = new CustomListAdapter(this,R.layout.listitem_layout, new ArrayList<Product>());
         spinnerAdapter = new ArrayAdapter(this,android.R.layout.simple_spinner_item, new ArrayList<String>());
 
         lw = (ListView)findViewById(R.id.list);
