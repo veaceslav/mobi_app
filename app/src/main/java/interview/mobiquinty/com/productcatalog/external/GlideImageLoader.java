@@ -18,7 +18,7 @@ import interview.mobiquinty.com.productcatalog.R;
  */
 public class GlideImageLoader {
 
-    public  static void loadImage(final Context context, ImageView view, String url){
+    public  static void loadCicleImage(final Context context, ImageView view, String url){
 
         Glide.with(context).load(url).asBitmap().centerCrop().placeholder(R.drawable.no_image).into(new BitmapImageViewTarget(view) {
             @Override
@@ -29,5 +29,10 @@ public class GlideImageLoader {
                 view.setImageDrawable(circularBitmapDrawable);
             }
         });
+    }
+
+    public  static void loadImage(final Context context, ImageView view, String url){
+
+        Glide.with(context).load(url).asBitmap().placeholder(R.drawable.no_image).into(view);
     }
 }

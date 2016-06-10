@@ -54,7 +54,7 @@ public class CustomListAdapter extends ArrayAdapter<Product> {
             }
 
             if(imgView != null){
-                GlideImageLoader.loadImage(getContext(), imgView, Constants.FETCH_URL + p.url);
+                GlideImageLoader.loadCicleImage(getContext(), imgView, Constants.FETCH_URL + p.url);
             }
         }
 
