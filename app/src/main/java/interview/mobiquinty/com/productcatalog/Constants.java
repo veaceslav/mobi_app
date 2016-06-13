@@ -15,7 +15,7 @@ public class Constants {
     public static final String PRODUCT_CATEGORY_ID = "categoryId";
     public static final String PRODUCT_NAME = "name";
     public static final String PRODUCT_URL = "url";
-    public static final String PRODUCT_DESCRIPTION = "descripton";
+    public static final String PRODUCT_DESCRIPTION = "description";
     public static final String PRODUCT_SALEPRICE = "salePrice";
     public static final String PRODUCT_AMOUNT = "amount";
     public static final String PRODUCT_CURRENCY = "currency";

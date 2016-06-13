@@ -11,9 +11,11 @@ public abstract class ExceptionHandlerAbstract {
 
     protected Context mContext;
 
-    ExceptionHandlerAbstract(Context context){
+    public ExceptionHandlerAbstract(Context context){
         this.mContext = context;
     }
 
     public abstract void handleException(Exception e);
+
+    public abstract String getLastExceptionErrorMessage();
 }

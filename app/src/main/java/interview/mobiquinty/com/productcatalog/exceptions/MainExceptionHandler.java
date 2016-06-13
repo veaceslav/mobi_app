@@ -12,17 +12,27 @@ import android.widget.Toast;
  */
 public class MainExceptionHandler extends ExceptionHandlerAbstract {
 
+    Exception e;
     public MainExceptionHandler(Context context) {
         super(context);
     }
 
     @Override
     public void handleException(final Exception e) {
+        this.e = e;
         new Handler(Looper.getMainLooper()).post(new Runnable() {
             public void run() {
                 Toast.makeText(mContext, e.getMessage(),
                         Toast.LENGTH_LONG).show();
             }
         });
+    }
+
+    @Override
+    public String getLastExceptionErrorMessage() {
+        if(this.e != null)
+            return e.getMessage();
+        else
+            return new String();
     }
 }

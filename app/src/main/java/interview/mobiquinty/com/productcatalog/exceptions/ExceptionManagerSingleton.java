@@ -6,7 +6,8 @@ package interview.mobiquinty.com.productcatalog.exceptions;
  * @email veaceslav.munteanu90@gmail.com
  */
 public class ExceptionManagerSingleton {
-    private static ExceptionManagerSingleton ourInstance = new ExceptionManagerSingleton();
+
+    public static ExceptionManagerSingleton ourInstance = new ExceptionManagerSingleton();
 
     public static ExceptionManagerSingleton getInstance() {
         return ourInstance;
@@ -14,7 +15,7 @@ public class ExceptionManagerSingleton {
 
     private ExceptionHandlerAbstract exceptionHandler;
 
-    private ExceptionManagerSingleton() {
+    public ExceptionManagerSingleton() {
     }
 
     public void setExceptionHandler(ExceptionHandlerAbstract handler){

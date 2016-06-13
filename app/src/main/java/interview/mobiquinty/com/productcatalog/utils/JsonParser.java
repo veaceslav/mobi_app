@@ -27,7 +27,8 @@ public class JsonParser {
                 product.id = tmp.getInt(Constants.PRODUCT_ID);
                 product.name= tmp.getString(Constants.PRODUCT_NAME);
                 product.url = tmp.getString(Constants.PRODUCT_URL);
-                //product.description = tmp.getString(Constants.PRODUCT_DESCRIPTION);
+                if(tmp.has(Constants.PRODUCT_DESCRIPTION))
+                    product.description = tmp.getString(Constants.PRODUCT_DESCRIPTION);
                 product.categoryID = tmp.getInt(Constants.PRODUCT_CATEGORY_ID);
 
                 JSONObject salePrice = tmp.getJSONObject(Constants.PRODUCT_SALEPRICE);
