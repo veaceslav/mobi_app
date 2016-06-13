@@ -45,7 +45,7 @@ public class ListAdapterTest extends AndroidTestCase{
         assertEquals("Bread was expected.", bread.name,
                 ((Product) mAdapter.getItem(0)).name);
 
-        assertEquals("Milk was expected.", bread.name,
+        assertEquals("Milk was expected.", milk.name,
                 ((Product) mAdapter.getItem(1)).name);
     }
 
