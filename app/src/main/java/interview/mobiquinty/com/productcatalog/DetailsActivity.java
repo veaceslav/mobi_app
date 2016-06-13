@@ -2,15 +2,11 @@ package interview.mobiquinty.com.productcatalog;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.Spinner;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-
 import interview.mobiquinty.com.productcatalog.external.GlideImageLoader;
+import interview.mobiquinty.com.productcatalog.utils.Product;
 
 /**
  * Created by Veaceslav Munteanu on 6/10/16.

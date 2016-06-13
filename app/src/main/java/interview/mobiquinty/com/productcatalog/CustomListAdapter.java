@@ -11,6 +11,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import interview.mobiquinty.com.productcatalog.external.GlideImageLoader;
+import interview.mobiquinty.com.productcatalog.utils.Product;
 
 /**
  * Created by Veaceslav Munteanu on 6/10/16.

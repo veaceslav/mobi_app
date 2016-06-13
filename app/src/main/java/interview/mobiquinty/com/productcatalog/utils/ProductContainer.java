@@ -1,7 +1,9 @@
-package interview.mobiquinty.com.productcatalog;
+package interview.mobiquinty.com.productcatalog.utils;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+
+import interview.mobiquinty.com.productcatalog.utils.Product;
 
 /**
  * Created by Veaceslav Munteanu on 6/10/16.

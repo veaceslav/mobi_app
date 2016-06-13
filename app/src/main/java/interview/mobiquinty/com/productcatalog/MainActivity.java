@@ -17,6 +17,11 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
+import interview.mobiquinty.com.productcatalog.utils.HttpAsyncTask;
+import interview.mobiquinty.com.productcatalog.utils.JsonParser;
+import interview.mobiquinty.com.productcatalog.utils.Product;
+import interview.mobiquinty.com.productcatalog.utils.ProductContainer;
+
 public class MainActivity extends AppCompatActivity {
 
     private final String TAG = "MainActivity";
@@ -32,7 +37,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         listAdapter = new CustomListAdapter(this,R.layout.listitem_layout, new ArrayList<Product>());
-        spinnerAdapter = new ArrayAdapter(this,android.R.layout.simple_dropdown_item_1line, new ArrayList<String>());
+        spinnerAdapter = new ArrayAdapter(this,
+                                          android.R.layout.simple_dropdown_item_1line,
+                                          new ArrayList<String>());
 
         lw = (ListView)findViewById(R.id.list);
         lw.setAdapter(listAdapter);
@@ -46,6 +53,9 @@ public class MainActivity extends AppCompatActivity {
         populate();
     }
 
+    /**
+     * Download the jSon file and create the list of items in the
+     */
     private void populate() {
 
         new HttpAsyncTask(new AsyncResponse() {
@@ -90,6 +100,9 @@ public class MainActivity extends AppCompatActivity {
         listAdapter.addAll(productContainer.getProducts(text));
     }
 
+    /**
+     * Add listener to the spinner, update list view if item selection changed
+     */
     public void addListenerOnSpinnerItemSelection() {
         sp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override

@@ -1,4 +1,4 @@
-package interview.mobiquinty.com.productcatalog;
+package interview.mobiquinty.com.productcatalog.utils;
 
 import android.os.AsyncTask;
 import android.util.Log;
@@ -11,6 +11,9 @@ import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.util.Objects;
 import java.util.Scanner;
+
+import interview.mobiquinty.com.productcatalog.AsyncResponse;
+import interview.mobiquinty.com.productcatalog.Constants;
 
 /**
  * Created by Veaceslav Munteanu on 6/10/16.

@@ -1,4 +1,4 @@
-package interview.mobiquinty.com.productcatalog;
+package interview.mobiquinty.com.productcatalog.utils;
 
 
 import org.json.JSONArray;
@@ -7,6 +7,8 @@ import org.json.JSONObject;
 
 
 import java.util.ArrayList;
+
+import interview.mobiquinty.com.productcatalog.Constants;
 
 /**
  * Created by Veaceslav Munteanu on 6/10/16.
