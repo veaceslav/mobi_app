@@ -3,7 +3,6 @@ package interview.mobiquinty.com.productcatalog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -17,6 +16,9 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
+import interview.mobiquinty.com.productcatalog.exceptions.CatalogException;
+import interview.mobiquinty.com.productcatalog.exceptions.ExceptionManagerSingleton;
+import interview.mobiquinty.com.productcatalog.exceptions.MainExceptionHandler;
 import interview.mobiquinty.com.productcatalog.utils.HttpAsyncTask;
 import interview.mobiquinty.com.productcatalog.utils.JsonParser;
 import interview.mobiquinty.com.productcatalog.utils.Product;
@@ -35,6 +37,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Set the exception handle to show error message as toasts
+        ExceptionManagerSingleton.getInstance().setExceptionHandler(new MainExceptionHandler(getApplicationContext()));
 
         listAdapter = new CustomListAdapter(this,R.layout.listitem_layout, new ArrayList<Product>());
         spinnerAdapter = new ArrayAdapter(this,
@@ -76,15 +81,17 @@ public class MainActivity extends AppCompatActivity {
                         setCategories(categories);
                         updateList();
                     } catch (JSONException e) {
-                        e.printStackTrace();
+                        ExceptionManagerSingleton.getInstance()
+                                .getExceptionHandler().handleException(new CatalogException("We were unable to parse data from server"));
                     }
 
                 } else {
-                    Log.e(TAG, "Object is not instance of string, we were supposed to get a json");
+                    ExceptionManagerSingleton.getInstance()
+                            .getExceptionHandler().handleException(new CatalogException("We got the wrong data format"));
                 }
 
             }
-        }).execute();
+        }).execute(Constants.FETCH_URL);
 
     }
 

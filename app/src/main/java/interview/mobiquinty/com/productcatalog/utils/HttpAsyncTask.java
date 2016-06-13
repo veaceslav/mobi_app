@@ -14,6 +14,8 @@ import java.util.Scanner;
 
 import interview.mobiquinty.com.productcatalog.AsyncResponse;
 import interview.mobiquinty.com.productcatalog.Constants;
+import interview.mobiquinty.com.productcatalog.exceptions.CatalogException;
+import interview.mobiquinty.com.productcatalog.exceptions.ExceptionManagerSingleton;
 
 /**
  * Created by Veaceslav Munteanu on 6/10/16.
@@ -37,25 +39,27 @@ public class HttpAsyncTask extends AsyncTask<Object , Object, Object>{
         HttpURLConnection conn = null;
         String response = null;
         try {
-            url = new java.net.URL(Constants.FETCH_URL);
+            url = new java.net.URL((String)params[0]);
             conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
         } catch (ProtocolException e) {
             e.printStackTrace();
         } catch (MalformedURLException e) {
-            e.printStackTrace();
+            ExceptionManagerSingleton.getInstance()
+                    .getExceptionHandler().handleException(new CatalogException("The server url is not valid"));
         } catch (IOException e) {
-            e.printStackTrace();
+            ExceptionManagerSingleton.getInstance()
+                    .getExceptionHandler().handleException(new CatalogException("We have troubles connecting to the server"));
         }
 
         // read the response
         try {
-            System.out.println("Response Code: " + conn.getResponseCode());
             InputStream in = new BufferedInputStream(conn.getInputStream());
             response = stringFromInputStream(in);
             Log.d(TAG, response);
         } catch (IOException e) {
-            e.printStackTrace();
+            ExceptionManagerSingleton.getInstance()
+                    .getExceptionHandler().handleException(new CatalogException("We have troubles connecting to the server"));
         }
         return response;
 
