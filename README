@@ -1,0 +1,15 @@
+This application takes the JSon formatted products and displays them as a list
+
+Interface Design:
+1. Category Selection as a Spinner
+2. Item list with custom Adapter
+
+Application Design:
+1. Http async task is responsible for getting data from server
+2. JSonParser class is responsible for parsing the products from Json string
+3. Exception package provides functionality for handling exceptions globally and displaying them as toasts
+4. Images are loaded by external library Glide, which also provides image caching
+
+How to run:
+1. Import project in Android Studio
+2. Run app 

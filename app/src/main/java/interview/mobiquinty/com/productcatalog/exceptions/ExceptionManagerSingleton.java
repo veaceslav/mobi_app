@@ -4,6 +4,11 @@ package interview.mobiquinty.com.productcatalog.exceptions;
  * Created by Veaceslav Munteanu on 6/13/16.
  *
  * @email veaceslav.munteanu90@gmail.com
+ *
+ */
+
+/**
+ * This class provides the exception handler for the whole application
  */
 public class ExceptionManagerSingleton {
 

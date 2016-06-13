@@ -6,6 +6,7 @@ import android.content.Context;
  * Created by Veaceslav Munteanu on 6/13/16.
  *
  * @email veaceslav.munteanu90@gmail.com
+ * This abstract class for different types of exception handling
  */
 public abstract class ExceptionHandlerAbstract {
 
